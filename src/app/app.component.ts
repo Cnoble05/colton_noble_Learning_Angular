@@ -9,5 +9,7 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'untitled1';
+  title:string = "Colton Noble's "
+  num:number = 8;
+  float:number = 3.4
 }
