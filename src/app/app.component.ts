@@ -11,5 +11,5 @@ import { RouterOutlet } from '@angular/router';
 export class AppComponent {
   title:string = "Colton Noble's "
   num:number = 8;
-  float:number = 3.4
+  float:number = 3.4;
 }
