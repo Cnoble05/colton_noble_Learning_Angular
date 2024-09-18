@@ -1,0 +1,18 @@
+html{
+  background: black;
+}
+
+#section{
+  background: aqua;
+  margin-right: 25em;
+  border-radius: 25px;
+  text-align: center;
+  margin-left: 25em;
+}
+
+h1 {
+  color: aqua;
+  text-align: center;
+  font-size: 3em;
+}
+

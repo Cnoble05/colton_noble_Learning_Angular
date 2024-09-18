@@ -1,24 +1,27 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
 <html>
 <head>
   <title>Welcome</title>
 </head>
 <body>
-  <h1>Welcome to {{title}} Webpage</h1>
-
-  <p>This is a normal number it can also be referred to as a int {{num}}</p>
 
 
-  <p>this is a decimal number or a float! {{float}} </p>
+  <h1>{{ title }}</h1>
 
-  <p>Thank you for visiting my page </p>
+  <div *ngFor="let game of Games" id = "section">
+      <h2>{{ game.title }}</h2>
+      <p>Genre: {{ game.genre }}</p>
+      <p>Year of Release: {{ game.yearOfRelease }}</p>
+      <p>Price:
+        <span *ngIf="game.price > 0">{{ game.price }}</span>
+        <span *ngIf="game.price <= 0">Free to Play</span>
+      </p>
+    <p>Owned?: {{game.Owned}}</p><button (click)="toggleOwned(game)" class="toggle-button">
+    Toggle Owned
+  </button>
+
+  </div>
+
 
 </body>
 </html>

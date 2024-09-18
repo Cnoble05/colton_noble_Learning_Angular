@@ -2,6 +2,7 @@
   "name": "untitled1",
   "version": "0.1.0",
   "scripts": {
+    "generateInterface": "ng generate interface",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
