@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { VideoGames } from './Shared/Modules/user';
+import { VideoGames } from './Shared/Modules/VideoGames';
 import {NgForOf, NgIf, } from '@angular/common';
+import {VideoGameListComponent} from "./video-game-list/video-game-list.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgForOf, NgIf,],
+  imports: [RouterOutlet, NgForOf, NgIf, VideoGameListComponent,],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

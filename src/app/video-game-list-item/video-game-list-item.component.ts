@@ -1,12 +1,9 @@
-import { Component } from '@angular/core';
+import {VideoGames} from "../Shared/Modules/VideoGames";
 
-@Component({
-  selector: 'app-video-game-list-item',
-  standalone: true,
-  imports: [],
-  templateUrl: './video-game-list-item.component.html',
-  styleUrl: './video-game-list-item.component.css'
-})
-export class VideoGameListItemComponent {
 
+export class VideoGameListItemComponent{
+  VideoGame1: VideoGames = { price: 79.99, title: "Tekken 8", genre: "Fighting Game", yearOfRelease: 2024, Owned: false };
+  VideoGame2: VideoGames = { price: 60.99, title: "Elden Ring", genre: "Souls like", yearOfRelease: 2022, Owned: false };
+  VideoGame3: VideoGames = { price: 79.99, title: "Call Of Duty", genre: "First Person Shooter", yearOfRelease: 2024, Owned: false };
+  VideoGame4: VideoGames = { price: 40.99, title: "Street Fighter 6", genre: "Fighting game", yearOfRelease: 2024, Owned: false };
 }

@@ -1,28 +1,2 @@
-
-<html>
-<head>
-  <title>Welcome</title>
-</head>
-<body>
-
-
-  <h1>{{ title }}</h1>
-
-  <div *ngFor="let game of VideoGameList" id = "section">
-      <h2>{{ game.title }}</h2>
-      <p>Genre: {{ game.genre }}</p>
-      <p>Year of Release: {{ game.yearOfRelease }}</p>
-      <p>Price:
-        <span *ngIf="game.price > 0">{{ game.price }}</span>
-        <span *ngIf="game.price <= 0">Free to Play</span>
-      </p>
-    <p>Owned?: {{game.Owned}}</p><button (click)="toggleOwned(game)" class="toggle-button">
-    Toggle Owned
-  </button>
-
-  </div>
-
-
-</body>
-</html>
+<app-video-game-list></app-video-game-list>
 
