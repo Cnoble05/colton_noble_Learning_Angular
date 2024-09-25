@@ -1,5 +1,8 @@
-<app-video-game-list-item [VideoGames] = "VideoGame1"> </app-video-game-list-item>
-<app-video-game-list-item [VideoGame]  = "VideoGame2"> </app-video-game-list-item>
-<app-video-game-list-item [VideoGames] = "VideoGame3"> </app-video-game-list-item>
-<app-video-game-list-item [VideoGames] = "VideoGame4"> </app-video-game-list-item>
 
+<div class="video-game-item">
+  <h2>{{ VideoGame.title }}</h2>
+  <p>Genre: {{ VideoGame.genre }}</p>
+  <p>Price: {{ VideoGame.price }}</p>
+  <p>Year of Release: {{ VideoGame.yearOfRelease }}</p>
+  <p>Owned: {{ VideoGame.Owned? 'Yes' : 'No' }}</p>
+</div>
