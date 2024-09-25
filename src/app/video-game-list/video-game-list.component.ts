@@ -21,5 +21,6 @@ export class VideoGameListComponent {
     { price: 79.99, title: "Call Of Duty", genre: "First Person Shooter", yearOfRelease: 2024, Owned: false },
     { price: 40.99, title: "Street Fighter 6", genre: "Fighting game", yearOfRelease: 2024, Owned: false }
   ];
+
 }
 
