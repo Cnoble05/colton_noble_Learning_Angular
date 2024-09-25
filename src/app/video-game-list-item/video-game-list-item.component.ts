@@ -9,4 +9,5 @@ import { VideoGames } from '../Shared/Modules/VideoGames';
 })
 export class VideoGameListItemComponent {
   @Input() VideoGame!: VideoGames;
+
 }
