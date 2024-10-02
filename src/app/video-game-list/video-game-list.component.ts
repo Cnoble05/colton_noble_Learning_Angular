@@ -19,17 +19,12 @@ export class VideoGameListComponent implements OnInit{
 
   constructor(private videoGamesService: VideoGamesService) {
   }
-  ngOnInit(): void {
+  ngOnInit() {
     this.videoGamesService.getVideoGames().subscribe({
       next:(data: VideoGames[]) => this.gameList = data,
       error:err => console.error("Error Facthing Games", err),
       complete:() => console.log("Student data fetch complete!")
     })
-  }
-
-  selectedGame?: VideoGames;
-  selectGame(game: VideoGames): void{
-    this.selectedGame = game;
   }
 
 }

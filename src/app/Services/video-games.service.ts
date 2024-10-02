@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Observable, of} from "rxjs";
 import {VideoGames} from "../Shared/Modules/VideoGames";
-import {VideoGameListComponent} from "../video-game-list/video-game-list.component";
 import {videoGameList} from "../Shared/Modules/mock-content";
 
 
@@ -10,16 +9,41 @@ import {videoGameList} from "../Shared/Modules/mock-content";
 })
 export class VideoGamesService {
 
-  private  videoGames: VideoGames[] = videoGameList;
+  private videoGames: VideoGames[] = videoGameList;
 
 
-  constructor() {}
+  constructor() {
+  }
 
 
-  getVideoGames(): Observable<VideoGames[]>{
+  getVideoGames(): Observable<VideoGames[]> {
     return of(videoGameList);
 
-}
+  }
+
+  getGameById(VideoGameID: number): Observable<VideoGames | undefined> {
+    const VideoGame = this.videoGames.find(videoGame => videoGame.id == VideoGameID)
+    return of(VideoGame)
+  }
+
+  createVideoGame(newVideoGame: VideoGames): Observable<VideoGames[]> {
+    this.videoGames.push(newVideoGame)
+    return of(this.videoGames);
+  }
+
+  updateVideoGame(updateGame: VideoGames): Observable<VideoGames[]> {
+    const index = this.videoGames.findIndex(videoGame => videoGame.id == updateGame.id);
+    if (index !== -1) {
+      this.videoGames[index] = updateGame;
+    }
+    return of(this.videoGames)
+  }
+
+  deleteVideoGame(VideoGameID: number): Observable<VideoGames[]> {
+    this.videoGames = this.videoGames.filter(videoGame => videoGame.id !== VideoGameID)
+    return of(this.videoGames)
+  }
+
 
 
 
