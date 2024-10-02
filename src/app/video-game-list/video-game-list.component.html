@@ -1,6 +1,3 @@
-
-<app-video-game-list-item [VideoGame] = "VideoGame1"> </app-video-game-list-item>
-<app-video-game-list-item [VideoGame] = "VideoGame2"> </app-video-game-list-item>
-<app-video-game-list-item [VideoGame] = "VideoGame3"> </app-video-game-list-item>
-<app-video-game-list-item [VideoGame] = "VideoGame4"> </app-video-game-list-item>
-
+<div *ngFor="let game of gameList; let index = index" [ngClass]="{'even': index % 2 == 0, 'odd': index % 2 != 0}">
+  <app-video-game-list-item [VideoGame]="game"></app-video-game-list-item>
+</div>

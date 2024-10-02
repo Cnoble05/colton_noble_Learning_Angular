@@ -1,3 +1,19 @@
-.video-game-item {
-  border: 2px solid black;
+
+
+.even {
+  background-color: green;
+  color: white;
+  padding-left: 45%;
 }
+
+
+.odd {
+  background-color: red;
+  color: white;
+  padding-left: 45%;
+}
+
+
+
+
+
