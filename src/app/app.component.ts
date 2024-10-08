@@ -5,7 +5,7 @@ import {NgClass, NgForOf, NgIf,} from '@angular/common';
 import {VideoGameListComponent} from "./video-game-list/video-game-list.component";
 import {VideoGameListItemComponent} from "./video-game-list-item/video-game-list-item.component";
 import {VideoGamesService} from "./Services/video-games.service";
-import {videoGameList} from "./Shared/Modules/mock-content";
+
 
 @Component({
   selector: 'app-root',
