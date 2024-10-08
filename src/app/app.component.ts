@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
 import { VideoGames } from './Shared/Modules/VideoGames';
 import {NgClass, NgForOf, NgIf,} from '@angular/common';
 import {VideoGameListComponent} from "./video-game-list/video-game-list.component";
@@ -10,11 +10,12 @@ import {VideoGamesService} from "./Services/video-games.service";
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgForOf, NgIf, VideoGameListComponent, VideoGameListItemComponent, NgClass,],
+  imports: [RouterOutlet, NgForOf, NgIf, VideoGameListComponent, VideoGameListItemComponent, NgClass, RouterLinkActive, RouterLink,],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+  title = "Colton's Games"
 
   selectedGame: VideoGames | undefined;
   constructor(private videoGameService: VideoGamesService) {

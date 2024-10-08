@@ -1,3 +1,13 @@
+<div class="nav-bar">
+  <nav>
+    <a routerLink="/videoGames" routerLinkActive="active">Video Game
+      List</a>
+  </nav>
+</div>
+<div class="app-container">
+  <h1>{{ title }}</h1>
 
+  <router-outlet></router-outlet>
+</div>
 <app-video-game-list-item *ngIf="selectedGame" [VideoGame]="selectedGame"></app-video-game-list-item>
 <app-video-game-list></app-video-game-list>
