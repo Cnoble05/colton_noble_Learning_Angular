@@ -3,6 +3,7 @@ export interface VideoGames {
   price: number,
   title: string,
   genre: string,
-  yearOfRelease: number
+  yearOfRelease: number,
+  image?: string
 
 }
