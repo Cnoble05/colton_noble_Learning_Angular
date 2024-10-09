@@ -3,6 +3,8 @@ import { VideoGames } from '../Shared/Modules/VideoGames';
 import {VideoGameListItemComponent} from "../video-game-list-item/video-game-list-item.component";
 import {VideoGamesService} from "../Services/video-games.service";
 import {NgClass, NgForOf} from "@angular/common";
+import {RouterLink} from "@angular/router";
+import {videoGameList} from "../Shared/Modules/mock-content";
 
 
 @Component({
@@ -12,33 +14,55 @@ import {NgClass, NgForOf} from "@angular/common";
   imports: [
     VideoGameListItemComponent,
     NgForOf,
-    NgClass
+    NgClass,
+    RouterLink
   ],
   styleUrls: ['./video-game-list.component.css']
 })
-export class VideoGameListComponent implements OnInit{
+export class VideoGameListComponent implements OnInit {
+
+  Game: VideoGames | undefined;
+  GameList: VideoGames[] = [];
+  currentIndex: number = 0;
+
+  constructor(
+    private videoGamesService: VideoGamesService) {}
+    //private route: activatedRoute
 
   VideoGameList: VideoGames[] = [
     {id: 1, price: 79.99, title: "Tekken 8", genre: "Fighting Game", yearOfRelease: 2024},
     {id: 2, price: 60.99, title: "Elden Ring", genre: "Souls like", yearOfRelease: 2022},
     {id: 3, price: 79.99, title: "Call Of Duty", genre: "First Person Shooter", yearOfRelease: 2024},
-    {id: 4, price: 40.99, title: "Street Fighter 6", genre: "Fighting game", yearOfRelease: 2024 }
+    {id: 4, price: 40.99, title: "Street Fighter 6", genre: "Fighting game", yearOfRelease: 2024}
   ];
 
 
   gameList: VideoGames[] = [];
 
 
-  constructor(private videoGamesService: VideoGamesService) {
-  }
+
+
   ngOnInit() {
     this.videoGamesService.getVideoGames().subscribe({
-      next:(data: VideoGames[]) => this.gameList = data,
-      error:err => console.error("Error Facthing Games", err),
-      complete:() => console.log("Student data fetch complete!")
+      next: (data: VideoGames[]) => this.gameList = data,
+      error: err => console.error("Error Facthing Games", err),
+      complete: () => console.log("Student data fetch complete!")
     })
   }
+/*
+        this.route.snapshot.paramMap.get('id');
+          if (id){
+            this.VideoGame.getGameById(Number(id)).subscribe(student => {
+              this.VideoGame = VideoGame;
+            })
 
-}
+          }
+        })
+      }
+
+
+*/
+  }
+
 
 

@@ -1,7 +1,11 @@
-
-<div class="video-game-item">
-  <h2>{{ VideoGame.title }}</h2>
-  <p>Genre: {{ VideoGame.genre }}</p>
-  <p>Price: {{ VideoGame.price }}</p>
-  <p>Year of Release: {{ VideoGame.yearOfRelease }}</p>
+<div *ngIf="videoGameList" class="game-detail">
+  <h2>Game Details</h2>
+  <p><strong>ID:</strong> {{ VideoGame.id }}</p>
+  <p><strong>Title:</strong> {{ VideoGame.title }}</p>
+  <p><strong>Price:</strong> {{ VideoGame.price }}</p>
+  <p><strong>Genre:</strong> {{ VideoGame.genre }}</p>
+  <p><strong>Year Of Release:</strong> {{ VideoGame.yearOfRelease}}</p>
+   <!---<button (click)="goBackward()" [disabled]="currentIndex === 0">Previous</button>
+  //<button (click)="goForward()" [disabled]="currentIndex === userList.length - 1">Next</button>
+ <button (click)="goBack()">Back to Student List</button>--->
 </div>

@@ -1,0 +1,13 @@
+.forms{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 200px;
+  text-align: center;
+  padding-left:  44%;
+
+}
+
+h3{
+  text-align: center;
+}

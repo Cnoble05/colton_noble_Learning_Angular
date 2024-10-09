@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { VideoGames } from '../Shared/Modules/VideoGames';
+import {videoGameList} from "../Shared/Modules/mock-content";
 
 @Component({
   selector: 'app-video-game-list-item',
@@ -10,4 +11,5 @@ import { VideoGames } from '../Shared/Modules/VideoGames';
 export class VideoGameListItemComponent {
   @Input() VideoGame!: VideoGames;
 
+  protected readonly videoGameList = videoGameList;
 }
