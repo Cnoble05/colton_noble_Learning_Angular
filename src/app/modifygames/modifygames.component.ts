@@ -71,8 +71,6 @@ export class ModifygamesComponent implements OnInit{
     if (id) {
       this.videoGamesService.deleteVideoGame(id).subscribe(() => {
         this.router.navigate(['/VideoGames'])
-
-
       });
     }
   }
