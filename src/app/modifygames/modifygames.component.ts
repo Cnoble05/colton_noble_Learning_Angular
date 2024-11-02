@@ -67,9 +67,11 @@ export class ModifygamesComponent implements OnInit{
 
   onDelete(): void {
     const id = this.modifyForm.get('id')?.value;
+
     if (id) {
       this.videoGamesService.deleteVideoGame(id).subscribe(() => {
         this.router.navigate(['/VideoGames'])
+
 
       });
     }

@@ -40,7 +40,8 @@ export class VideoGamesService {
   }
 
   deleteVideoGame(videoGameId: number): Observable<VideoGames[]> {
-    this.videoGames = this.videoGames.filter(videoGame => videoGame.id !== videoGameId)
+    this.videoGames = this.videoGames.filter(videoGame => videoGame.id !== videoGameId);
+    console.log('Updated game list:', this.videoGames);
     return of(this.videoGames);
   }
 
