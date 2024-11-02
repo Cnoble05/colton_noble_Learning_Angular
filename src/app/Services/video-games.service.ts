@@ -39,12 +39,14 @@ export class VideoGamesService {
     return of(this.videoGames)
   }
 
-  deleteVideoGame(VideoGameID: number): Observable<VideoGames[]> {
-    this.videoGames = this.videoGames.filter(videoGame => videoGame.id !== VideoGameID)
-    return of(this.videoGames)
+  deleteVideoGame(videoGameId: number): Observable<VideoGames[]> {
+    this.videoGames = this.videoGames.filter(videoGame => videoGame.id !== videoGameId)
+    return of(this.videoGames);
   }
 
-
+  generateNewId(): number {
+    return this.videoGames.length > 0 ? Math.max(...this.videoGames.map(videoGame => videoGame.id)) + 1 : 1;
+  }
 
 
 }
