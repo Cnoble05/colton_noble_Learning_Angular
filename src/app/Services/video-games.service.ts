@@ -1,52 +1,60 @@
 import { Injectable } from '@angular/core';
-import {Observable, of} from "rxjs";
+import {catchError, Observable, of, throwError} from "rxjs";
 import {VideoGames} from "../Shared/Modules/VideoGames";
 import {videoGameList} from "../Shared/Modules/mock-content";
+import {HttpClient, HttpErrorResponse} from "@angular/common/http";
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class VideoGamesService {
+  private apiUrl = 'api/video-games';
+
 
   private videoGames: VideoGames[] = videoGameList;
 
 
-  constructor() {
-  }
+  constructor(private http: HttpClient) { }
 
 
   getVideoGames(): Observable<VideoGames[]> {
-    return of(videoGameList);
+    return this.http.get<VideoGames[]>(this.apiUrl).pipe(catchError(this.handleError));
 
   }
 
   getGameById(VideoGameID: number): Observable<VideoGames | undefined> {
-    const VideoGame = this.videoGames.find(videoGame => videoGame.id == VideoGameID)
-    return of(VideoGame)
+    return this.http.get<VideoGames>(`${this.apiUrl}/${VideoGameID}`).pipe(catchError(this.handleError)); //return a single student
+
   }
 
-  createVideoGame(newVideoGame: VideoGames): Observable<VideoGames[]> {
-    this.videoGames.push(newVideoGame)
-    return of(this.videoGames);
+  createVideoGame(newVideoGame: VideoGames): Observable<VideoGames> {
+    newVideoGame.id = this.generateNewId();
+    return this.http.post<VideoGames>(this.apiUrl, newVideoGame).pipe(
+        catchError(this.handleError)
+    );
   }
-
-  updateVideoGame(updateGame: VideoGames): Observable<VideoGames[]> {
-    const index = this.videoGames.findIndex(videoGame => videoGame.id == updateGame.id);
-    if (index !== -1) {
-      this.videoGames[index] = updateGame;
-    }
-    return of(this.videoGames)
+  updateVideoGame(updateGame: VideoGames): Observable<VideoGames> {
+    const url = `${this.apiUrl}/${updateGame.id}`; // Fix: Use updateGame.id
+    return this.http.put<VideoGames>(url, updateGame).pipe(
+        catchError(this.handleError)
+    );
   }
 
   deleteVideoGame(videoGameId: number): Observable<VideoGames[]> {
-    this.videoGames = this.videoGames.filter(videoGame => videoGame.id !== videoGameId);
-    console.log('Updated game list:', this.videoGames);
-    return of(this.videoGames);
+    const url = `${this.apiUrl}/${videoGameId}`; // Fix: Use videoGameId
+    return this.http.delete<VideoGames[]>(url).pipe(
+        catchError(this.handleError)
+    );
   }
 
   generateNewId(): number {
     return this.videoGames.length > 0 ? Math.max(...this.videoGames.map(videoGame => videoGame.id)) + 1 : 1;
+  }
+
+  private handleError(error: HttpErrorResponse) {
+    console.error('API error:', error);
+    return throwError(() => new Error('Server error, please try again.'));
   }
 
 
