@@ -6,12 +6,13 @@ import {VideoGameListComponent} from "./video-game-list/video-game-list.componen
 import {VideoGameListItemComponent} from "./video-game-list-item/video-game-list-item.component";
 import {VideoGamesService} from "./Services/video-games.service";
 import {videoGameList} from "./Shared/Modules/mock-content";
+import {PlayTimePipe} from "./pipes/play-time.pipe";
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgForOf, NgIf, VideoGameListComponent, VideoGameListItemComponent, NgClass, RouterLinkActive, RouterLink, DatePipe, CurrencyPipe, UpperCasePipe, LowerCasePipe,],
+  imports: [RouterOutlet, NgForOf, NgIf, VideoGameListComponent, VideoGameListItemComponent, NgClass, RouterLinkActive, RouterLink, DatePipe, CurrencyPipe, UpperCasePipe, LowerCasePipe, PlayTimePipe,],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

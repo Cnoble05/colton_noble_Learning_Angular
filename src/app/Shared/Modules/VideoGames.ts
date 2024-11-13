@@ -4,6 +4,6 @@ export interface VideoGames {
   title: string,
   genre: string,
   yearOfRelease: number,
-  image?: string
+  playTime: number
 
 }
