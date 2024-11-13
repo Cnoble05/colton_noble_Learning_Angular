@@ -7,7 +7,16 @@
 <div class="app-container">
   <h1>{{ title }}</h1>
 
-  <router-outlet></router-outlet>
+  <div *ngFor="let game of videoGameList">
+  <p>Name {{game.title| uppercase}}</p>
+  <p>Genre {{game.genre| lowercase}}</p>
+  <p>Price {{game.price | currency: 'CAD'}}</p>
+  <p>----------------------------------</p>
+  </div>
+
+
+
+
 
 </div>
 
