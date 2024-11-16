@@ -42,6 +42,7 @@ export class VideoGameListComponent implements OnInit {
 
 
 
+
   ngOnInit() {
     this.videoGamesService.getVideoGames().subscribe({
       next: (data: VideoGames[]) => this.gameList = data,
