@@ -5,6 +5,7 @@ import {VideoGamesService} from "../Services/video-games.service";
 import {videoGameList} from "../Shared/Modules/mock-content";
 import {VideoGames} from "../Shared/Modules/VideoGames";
 import {NgForOf} from "@angular/common";
+import {HoverHighlightDirective} from "../directives/hover-highlight.directive";
 
 
 @Component({
@@ -12,7 +13,9 @@ import {NgForOf} from "@angular/common";
   standalone: true,
   imports: [
     ReactiveFormsModule,
-    NgForOf
+    NgForOf,
+    HoverHighlightDirective,
+
   ],
   templateUrl: './modifygames.component.html',
   styleUrl: './modifygames.component.css'

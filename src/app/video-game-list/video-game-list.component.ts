@@ -5,6 +5,7 @@ import {VideoGamesService} from "../Services/video-games.service";
 import {NgClass, NgForOf, NgOptimizedImage} from "@angular/common";
 import {RouterLink} from "@angular/router";
 import {videoGameList} from "../Shared/Modules/mock-content";
+import {HoverHighlightDirective} from "../directives/hover-highlight.directive";
 
 
 @Component({
@@ -16,7 +17,8 @@ import {videoGameList} from "../Shared/Modules/mock-content";
     NgForOf,
     NgClass,
     RouterLink,
-    NgOptimizedImage
+    NgOptimizedImage,
+    HoverHighlightDirective
   ],
   styleUrls: ['./video-game-list.component.css']
 })

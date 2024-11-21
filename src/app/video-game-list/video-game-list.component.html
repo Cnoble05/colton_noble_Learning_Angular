@@ -12,17 +12,25 @@
   </thead>
   <tbody>
 
-    <tr *ngFor="let VideoGames of VideoGameList" [routerLink]="['/students',VideoGames.id]">
-      <td>{{VideoGames.id}}</td>
-      <td>{{VideoGames.title}}</td>
-      <td>{{VideoGames.price}}</td>
-      <td>{{VideoGames.genre}}</td>
-      <td>{{VideoGames.yearOfRelease}}</td>
-      <img src= "{{VideoGames?.image}}" alt = "This is an image" width="400" height="400">
-    </tr>
+  <tr
+    *ngFor="let VideoGames of VideoGameList"
+    [appHoverHighlight]="'gold'"
 
-    </tbody>
-  </table>
-
-
-
+    [routerLink]="['/VideoGames', VideoGames.id]"
+  >
+    <td>{{ VideoGames.id }}</td>
+    <td>{{ VideoGames.title }}</td>
+    <td>{{ VideoGames.price }}</td>
+    <td>{{ VideoGames.genre }}</td>
+    <td>{{ VideoGames.yearOfRelease }}</td>
+    <td>
+      <img
+        src="{{ VideoGames?.image }}"
+        alt="This is an image"
+        width="400"
+        height="400"
+      />
+    </td>
+  </tr>
+  </tbody>
+</table>
