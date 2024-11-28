@@ -5,12 +5,14 @@ import {NgClass, NgForOf, NgIf,} from '@angular/common';
 import {VideoGameListComponent} from "./video-game-list/video-game-list.component";
 import {VideoGameListItemComponent} from "./video-game-list-item/video-game-list-item.component";
 import {VideoGamesService} from "./Services/video-games.service";
-
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatButtonModule} from "@angular/material/button";
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgForOf, NgIf, VideoGameListComponent, VideoGameListItemComponent, NgClass, RouterLinkActive, RouterLink,],
+  imports: [RouterOutlet, NgForOf, NgIf, VideoGameListComponent, VideoGameListItemComponent, NgClass, RouterLinkActive, RouterLink, MatToolbarModule, MatButtonModule,MatIconModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

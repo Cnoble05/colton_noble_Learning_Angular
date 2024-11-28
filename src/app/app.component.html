@@ -1,9 +1,11 @@
-<div class="nav-bar">
-  <nav>
-    <a routerLink="/VideoGames" routerLinkActive="active">Home</a>
-    <a routerLink="modifygames" routerLinkActive = "active">Modify Games</a>
-  </nav>
-</div>
+<mat-toolbar color="primary" class="toolbar">
+  <div class="nav-container">
+    <button mat-button routerLink="/VideoGames">List</button>
+    <button mat-button routerLink="/modifygames">Modify</button>
+
+  </div>
+</mat-toolbar>
+
 <div class="app-container">
   <h1>{{ title }}</h1>
 

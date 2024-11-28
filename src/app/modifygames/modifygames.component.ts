@@ -11,6 +11,7 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatBadgeModule} from "@angular/material/badge";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatRadioModule} from "@angular/material/radio";
+import {MatTooltipModule} from "@angular/material/tooltip";
 
 
 @Component({
@@ -25,6 +26,7 @@ import {MatRadioModule} from "@angular/material/radio";
     MatBadgeModule,
     MatFormFieldModule,
     MatRadioModule,
+    MatTooltipModule,
 
 
   ],

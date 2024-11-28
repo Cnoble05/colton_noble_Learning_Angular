@@ -16,25 +16,13 @@ h1 {
   font-size: 3em;
 }
 
-.nav-bar {
-  background-color: #f8f9fa;
-  padding: 10px 20px;
-  border-bottom: 1px solid #dee2e6;
-}
-
-.nav-bar nav {
+.toolbar {
   display: flex;
-  justify-content: center;
+  justify-content: center; /* Centers content horizontally */
+  align-items: center;    /* Centers content vertically */
 }
 
-.nav-bar a {
-  text-decoration: none;
-  color: #007bff;
-  font-size: 18px;
-  margin: 0 15px;
-}
-
-.nav-bar a.active {
-  font-weight: bold;
-  color: #0056b3;
+.nav-container {
+  display: flex;
+  gap: 20px; /* Space between buttons */
 }
