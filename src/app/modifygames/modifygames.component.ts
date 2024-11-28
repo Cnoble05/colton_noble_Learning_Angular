@@ -6,6 +6,11 @@ import {videoGameList} from "../Shared/Modules/mock-content";
 import {VideoGames} from "../Shared/Modules/VideoGames";
 import {NgForOf} from "@angular/common";
 import {HoverHighlightDirective} from "../directives/hover-highlight.directive";
+import {MatButtonModule} from "@angular/material/button";
+import {MatCheckboxModule} from "@angular/material/checkbox";
+import {MatBadgeModule} from "@angular/material/badge";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatRadioModule} from "@angular/material/radio";
 
 
 @Component({
@@ -15,6 +20,12 @@ import {HoverHighlightDirective} from "../directives/hover-highlight.directive";
     ReactiveFormsModule,
     NgForOf,
     HoverHighlightDirective,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatBadgeModule,
+    MatFormFieldModule,
+    MatRadioModule,
+
 
   ],
   templateUrl: './modifygames.component.html',
@@ -23,7 +34,13 @@ import {HoverHighlightDirective} from "../directives/hover-highlight.directive";
 export class ModifygamesComponent implements OnInit{
   modifyForm: FormGroup;
   videoGame: VideoGames | undefined;
-
+  hoursPlayedOptions = [
+    { value: '0', viewValue: 'None' },
+    { value: '<50', viewValue: 'Less than 50 hours' },
+    { value: '<100', viewValue: 'Less than 100 hours' },
+    { value: '<500', viewValue: 'Less than 500 hours' },
+    { value: '>501', viewValue: 'More than 501 hours' }
+  ];
 
   constructor(private fb: FormBuilder,
               private videoGamesService: VideoGamesService,

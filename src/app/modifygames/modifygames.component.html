@@ -19,9 +19,26 @@
   <label for="yearOfRelease">Year of Release</label>
   <input id="yearOfRelease" type="number" formControlName="yearOfRelease" appHoverHighlight="lightblue">
 
-  <button type="submit" appHoverHighlight="lightYellow">Submit</button>
-  <button type="button" (click)="onDelete()" appHoverHighlight="lightcoral">Delete</button>
-  <button type="button" (click)="onCreate()" appHoverHighlight="lightGreen">Create</button>
+  <mat-checkbox class="checkbox">Have played?</mat-checkbox>
+
+
+  <p>amount of hours played</p>
+
+  <mat-radio-group formControlName="hoursPlayed">
+    <mat-radio-button *ngFor="let option of hoursPlayedOptions" [value]="option.value">
+      {{ option.viewValue }}
+    </mat-radio-button>
+  </mat-radio-group>
+
+
+
+
+
+  <button type="submit" mat-raised-button appHoverHighlight="lightYellow">Submit</button>
+
+  <button mat-raised-button color="warn" type="button" (click)="onDelete()">Delete</button>
+
+  <button type="button" mat-raised-button  (click)="onCreate()" appHoverHighlight="lightGreen">Create</button>
 
 
 </form>
